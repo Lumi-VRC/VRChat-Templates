@@ -35,7 +35,7 @@ const throttledQueue = require("throttled-queue");
 const throttle = throttledQueue(1, 60000, true);
 
 // Load config (adjust the path as needed)
-// This file contains verification service account (fch_verify_#) credentials, 2fa secret (obtained directly from QR code) after enabling 2FA, etc.
+// This file contains verification service account credentials, 2fa secret (obtained directly from QR code) after enabling 2FA, etc.
 // You could also store them as environmental variables, but in a testing environment I just found this simpler.
 const config = require("./config/config.json");
 
