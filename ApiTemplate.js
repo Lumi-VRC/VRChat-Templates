@@ -10,6 +10,20 @@ npm install throttled-queue
 npm install axios-cookiejar-support@latest
 */
 
+/* config.json example, which should be located in a folder called Config in this programs home dir3ectory.
+   Replace the three fields. "Twofa" must be obtained from the qr code, not the 'show code' option. Just take it from the link it gives you. It will look like this:
+   otpauth://totp/VRChat:(email)?secret=={TWOFA_CODE_HERE}&issuer=VRChat
+   
+{
+  "VRChat": {
+    "user": "vrchat_account_username",
+    "pass": "vrchat_account_password",
+    "twofa": "Get_This_Base64_Key_From_The_!!QRCode!!_On_VRChats_Website_Using_Your_Phone"
+  }
+}
+
+*/
+
 //This library simplifies interactions with VRChat's API
 const vrchat = require("vrchat");                   
 //This library allows us to generate OTP's dynamically, which is needed for service accounts to run by themselves.
@@ -23,7 +37,7 @@ const throttle = throttledQueue(1, 60000, true);
 // Load config (adjust the path as needed)
 // This file contains verification service account (fch_verify_#) credentials, 2fa secret (obtained directly from QR code) after enabling 2FA, etc.
 // You could also store them as environmental variables, but in a testing environment I just found this simpler.
-const config = require("./config/verify_config.json");
+const config = require("./config/config.json");
 
 console.log("Starting test.js...");
 console.log("Loaded config:", config);
