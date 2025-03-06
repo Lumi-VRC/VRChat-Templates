@@ -1,4 +1,5 @@
 //A template for using a vrchat account to access VRChat's API!
+//This node.js command line program uses a VRChat account supplied in a .json file to access and log into VRChat's API, returning various debug strings and (hopefully!) the accounts username.
 //@lumi_vrc on Discord
 //Much of the credit goes to the amazing community that inspired this program!
 //Code's mine though, though I had plenty of help. :3
